@@ -1,0 +1,34 @@
+- ## Research existing language models and their hardware requirements + address dataset for langchain
+- [[The Plan]]
+	- Anylisys
+		- check out space/time heavy operations [[ref](((6489cb7c-70ea-4c55-b291-401a485a0015)))]
+	- Training Process
+		- Knowledge Distillation (thought token) + lossy finetuning [[ref](((6489cbc3-011b-4726-8dc0-dd2c98860bc9)))] [[ref](((6475f2fd-b12b-4ad7-9cca-8fb3296192cf)))] [[ref](((64761851-4cfb-4afc-b912-5fb6ec57f74c)))]
+			- Fine-tuneing [dataset](https://huggingface.co/datasets/OpenAssistant/oasst1)
+			- tree if thought on oasst1
+		- Archived
+		  collapsed:: true
+			- Model Training Process
+			  collapsed:: true
+				- Pre-training --> training for ~1T Tokens [[ref](((6475ee80-13db-46b9-bbc7-9f5209c3bb29)))]
+					- maybe instead of pretraining a model, we take an existing pretrained model
+					- Red Pajamas Dataset
+						- [[Huggingface](https://huggingface.co/datasets/togethercomputer/RedPajama-Data-1T)] [[Github](https://github.com/togethercomputer/RedPajama-Data)]
+					- **[GPT-2](https://huggingface.co/docs/transformers/model_doc/gpt2) medium model**
+						- has support for neural engine (coreml)
+						- decoder-only
+						- ![](https://github.com/kendreaditya/neural-engine-benchmark/raw/main/assets/model-graph.png)
+				- Training with open assistant dataset
+				- Fineturning with LaMini model
+				- Model reinforcement learning [Cite instructGPT]
+			- **Combine the pre-training process with knowledge distillation of a bigger model to reach generalization faster (tripple loss distilBert)** - good idea but might be too much
+	- Accurate facts and statistics (research this)
+- Talks
+	- [[State of GPT]]
+- Models
+	- [[LaMini]]
+		- [[Github](https://github.com/mbzuai-nlp/LaMini-LM)] [[Dataset](https://huggingface.co/datasets/MBZUAI/LaMini-instruction)] [[Colab](https://colab.research.google.com/drive/1fJrwbqYFQa1wJ3xJelZ9gjTxcDnCqumb?usp=sharing#scrollTo=Wo-FSysZiVkA)] [[Paper](https://arxiv.org/abs/2304.14402)]
+	- [[Orca]]
+		- [[Paper](https://arxiv.org/pdf/2306.02707.pdf)]
+	-
+		-
